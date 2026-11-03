@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta property="og:title" content="Simbiose Digital · Evelise Soares">
+<meta property="og:description" content="Reestruturação empresarial com IA para empresas onde o dinheiro não sobra no fim do mês.">
+<meta property="og:image" content="https://simbiosedigital.com.br/foto-evelise.webp">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Simbiose Digital</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Simbiose Digital: reestruturação empresarial com IA. Consultoria mão na massa de Evelise Soares para empresas onde o dinheiro não sobra no fim do mês.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..800&family=Instrument+Serif:ital@0;1&family=Public+Sans:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+/* Layout: uma coluna editorial larga; faixas de cor só onde marcam virada (problema, raio-x, chamada final). Marca: marinho + laranja + grafite. */
+:root{
+  --navy:#01004A;
+  --orange:#FF6600;
+  --graphite:#3D3D3D;
+  --bg:#F7F7FB;
+  --surface:#FFFFFF;
+  --ink:#0E0D3A;
+  --muted:#4F4E66;
+  --line:#DCDBE8;
+  --accent:#C24E00;        /* laranja da marca escurecido para contraste AA em fundo claro */
+  --accent-hi:#FF6600;
+  --accent-ink:#FFFFFF;
+  --band:#0D0C36;
+  --band-ink:#F2F1FF;
+  --band-muted:#B9B8E0;
+  --track:#E7E6F2;
+  --f-display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --f-body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"Archivo","Arial Narrow",Arial,sans-serif;
+  --f-serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --r:4px;
+  --r-lg:12px;
+  --shadow:0 18px 40px -18px rgba(1,0,74,.45);
+  --grid:rgba(1,0,74,.06);
+  --glow:rgba(255,102,0,.10);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#07062A;--surface:#0F0E3A;--ink:#EEEDFB;--muted:#B3B2D3;--line:#26255A;
+  --accent:#FF7A1F;--accent-ink:#1A0A00;--band:#11103A;--band-ink:#F2F1FF;--band-muted:#C3C2EA;--track:#1E1D52;--grid:rgba(255,255,255,.05);--glow:rgba(255,122,31,.12);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#07062A;--surface:#0F0E3A;--ink:#EEEDFB;--muted:#B3B2D3;--line:#26255A;
+  --accent:#FF7A1F;--accent-ink:#1A0A00;--band:#11103A;--band-ink:#F2F1FF;--band-muted:#C3C2EA;--track:#1E1D52;--grid:rgba(255,255,255,.05);--glow:rgba(255,122,31,.12);color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--f-body);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:3px}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);font-stretch:85%;line-height:1.05;text-wrap:balance;margin:0;letter-spacing:-0.01em}
+h2{font-size:clamp(30px,4.4vw,50px);font-weight:700;letter-spacing:-0.015em}
+h1 em,h2 em{font-family:var(--f-serif);font-style:italic;font-weight:400;font-stretch:100%;letter-spacing:0}
+h3{font-size:22px;font-weight:700;font-stretch:90%}
+p{margin:0}
+.eyebrow{font:600 12px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.lede{font-size:19px;color:var(--muted);max-width:60ch}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;gap:10px;font:600 16px/1 var(--f-body);letter-spacing:.01em;text-decoration:none;padding:16px 22px;border-radius:var(--r);border:2px solid transparent;cursor:pointer;transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary::after{content:"→";font-weight:400;transition:transform .15s ease}
+.btn-primary:hover::after{transform:translateX(3px)}
+.btn-sm::after{content:none}
+@media (max-width:420px){.nav a.plain{display:none}}
+.btn-ghost{border-color:currentColor;color:var(--ink);background:transparent}
+.btn-sm{padding:10px 14px;font-size:14px}
+
+/* topo */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px}
+.brand{display:flex;align-items:baseline;gap:10px;text-decoration:none}
+.brand b{font:800 20px/1 var(--f-display);font-stretch:80%;letter-spacing:.01em}
+.brand span{font:600 11px/1 var(--f-mono);color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.nav{display:flex;gap:8px;align-items:center}
+.nav a.plain{font-size:14px;text-decoration:none;color:var(--muted);padding:8px 10px}
+.nav a{white-space:nowrap}
+@media (max-width:640px){.brand span{display:none}.nav a.plain{padding:8px 4px;font-size:13px}.brand b{font-size:18px}}
+
+.logo{height:54px;width:auto;display:block}
+header.top .wrap{padding-block:6px!important}
+.brand span{border-left:1px solid var(--line);padding-left:12px}
+@media (max-width:1000px){.brand span{display:none}}
+.brand{align-items:center}
+:root{--logo-a:#01004A;--logo-b:#D95B00;--logo-icon:#3D3D3D}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--logo-a:#EEEDFB;--logo-b:#FF7A1F;--logo-icon:#B3B2D3}}
+:root[data-theme="dark"]{--logo-a:#EEEDFB;--logo-b:#FF7A1F;--logo-icon:#B3B2D3}
+.frame .mono{position:absolute;inset:22% 22%;width:56%;height:56%;color:rgba(255,255,255,.22)}
+.fbrand{display:flex;align-items:center;gap:10px}
+.ficon{width:28px;height:auto;color:var(--accent)}
+@media (max-width:640px){.logo{height:44px}}
+.xicon{width:min(220px,60%);height:auto;color:rgba(255,138,61,.28);margin-top:24px}
+@media (max-width:860px){.xicon{display:none}}
+.li-link{color:var(--accent);font-weight:600;text-underline-offset:3px}
+.cta-note{margin-top:12px;font-size:14px;color:var(--muted)}
+.outcome{font:400 22px/1.25 var(--f-serif);font-style:italic;color:var(--accent)}
+/* abertura */
+.hero-band{position:relative;overflow:hidden;background:radial-gradient(55% 70% at 85% 35%,var(--glow),transparent 70%),var(--bg)}
+.hero{padding-block:clamp(48px,7vw,88px) clamp(48px,6vw,80px);display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.9fr);gap:clamp(32px,5vw,72px);align-items:center}
+.hero .tag{margin-bottom:22px}
+.hero h1{font-size:clamp(40px,5.8vw,74px);font-weight:700;font-stretch:78%;max-width:14ch;letter-spacing:-0.02em}
+.hero h1 em{color:var(--accent);font-size:1.04em}
+.portrait{position:relative;justify-self:center;width:min(100%,420px)}
+.shot{position:relative}
+.frame{position:relative;aspect-ratio:4/5;max-width:100%;background:linear-gradient(160deg,#1C1B46,#0D0C36);border-radius:2px;overflow:hidden}
+.frame img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05);display:block}
+
+.frame::after{content:none}
+.corner{position:absolute;width:26px;height:26px;border-color:var(--accent);border-style:solid;z-index:2}
+.c1{top:-10px;left:-10px;border-width:2px 0 0 2px}.c2{top:-10px;right:-10px;border-width:2px 2px 0 0}
+.c3{bottom:-10px;left:-10px;border-width:0 0 2px 2px}.c4{bottom:-10px;right:-10px;border-width:0 2px 2px 0}
+.scan{position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);top:0;opacity:.9;z-index:2;animation:scan 3.2s ease-in-out 0.4s 1 both}
+@keyframes scan{0%{top:2%;opacity:0}10%{opacity:.9}90%{opacity:.9}100%{top:96%;opacity:0}}
+.caption{position:relative;margin-top:18px;color:var(--muted);font:600 11px/1.5 var(--f-mono);letter-spacing:.1em;text-transform:uppercase}
+.caption b{display:block;color:var(--ink);font:400 22px/1.1 var(--f-serif);font-style:italic;letter-spacing:0;text-transform:none}
+.chip{position:absolute;z-index:4;left:-28px;bottom:22%;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;display:grid;gap:4px;box-shadow:var(--shadow);font-size:13px;max-width:220px}
+.chip .l{font:600 10px/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.chip b{font:700 15px/1.2 var(--f-display);font-stretch:88%}
+@media (max-width:860px){.hero{grid-template-columns:1fr}.portrait{width:min(100%,340px);margin-top:8px}.chip{left:-8px}}
+.hero .lede{margin-top:24px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.creds{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:44px;padding-top:20px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.creds strong{color:var(--ink);font-weight:600}
+
+/* problema */
+.problem,.xray{background:radial-gradient(70% 90% at 100% 0%,rgba(255,102,0,.10),transparent 60%),var(--band);border-top:2px solid var(--accent-hi)}
+.problem{color:var(--band-ink)}
+.problem .wrap{padding-block:clamp(56px,8vw,96px)}
+.problem .eyebrow{color:#FF8A3D}
+.problem h2{margin-top:14px;max-width:18ch}
+.problem .intro{margin-top:18px;color:var(--band-muted);max-width:56ch}
+.causes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;margin-top:40px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.14)}
+.cause{background:color-mix(in srgb,var(--band) 94%,#fff);padding:28px 26px;display:grid;gap:10px;align-content:start}
+.cause .k{font:600 12px/1 var(--f-mono);letter-spacing:.08em;color:#FF8A3D}
+.cause h3{color:#fff;font-size:24px}
+.cause p{color:var(--band-muted);font-size:16px}
+.problem .close{margin-top:32px;font:700 22px/1.3 var(--f-display);font-stretch:85%}
+@media (max-width:720px){.causes{grid-template-columns:1fr}}
+
+/* como trabalho */
+section.block{padding-block:clamp(64px,9vw,112px)}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:48px;align-items:start}
+.split .head{position:sticky;top:96px;display:grid;gap:14px}
+.pillars{display:grid;gap:36px}
+.pillar{display:grid;gap:10px;padding-left:22px;border-left:3px solid var(--accent)}
+.pillar p{color:var(--muted);max-width:62ch}
+@media (max-width:860px){.split{grid-template-columns:1fr;gap:28px}.split .head{position:static}}
+
+/* serviços */
+.services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:40px}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px 24px;display:grid;gap:12px;align-content:start}
+.svc p{color:var(--muted);font-size:16px}
+.svc .for{font-size:14px;color:var(--ink);padding-top:12px;border-top:1px dashed var(--line)}
+.svc .for b{font-weight:600}
+@media (max-width:900px){.services{grid-template-columns:1fr}}
+.center-cta{margin-top:28px}
+
+/* pessoas */
+.people{border-block:1px solid var(--line);background:var(--surface)}
+.people .wrap{padding-block:48px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:48px;align-items:baseline}
+.people p{color:var(--muted);max-width:62ch}
+@media (max-width:860px){.people .wrap{grid-template-columns:1fr;gap:14px}}
+
+/* raio-x */
+.xray{color:var(--band-ink)}
+.xray .wrap{padding-block:clamp(56px,8vw,96px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:48px;align-items:start}
+.xray .eyebrow{color:#FF8A3D}
+.xray .intro{display:grid;gap:16px}
+.xray .intro p{color:var(--band-muted);max-width:44ch}
+.panel{background:var(--surface);color:var(--ink);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:28px;min-height:420px;display:grid;align-content:start;gap:20px}
+.progress{display:flex;gap:6px}
+.progress i{height:4px;flex:1;background:var(--track);border-radius:2px}
+.progress i.on{background:var(--accent)}
+.qnum{font:600 12px/1 var(--f-mono);color:var(--muted);letter-spacing:.06em}
+.qtext{font:700 24px/1.2 var(--f-display);font-stretch:88%}
+.opts{display:grid;gap:10px}
+.opt{display:block;width:100%;min-height:48px;text-align:left;font:400 16px/1.4 var(--f-body);padding:14px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--bg);color:var(--ink);cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.qnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.linkbtn{background:none;border:0;color:var(--muted);font:600 15px var(--f-body);cursor:pointer;min-height:44px;padding:10px 4px;text-decoration:underline}
+.linkbtn[disabled]{visibility:hidden}
+.result h3{font-size:28px}
+.result .hyp{font:600 12px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.bars{display:grid;gap:12px;margin-top:4px}
+.bar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 12px;font-size:14px}
+.bar .t{height:10px;grid-column:1/-1;background:var(--track);border-radius:5px;overflow:hidden}
+.bar .t span{display:block;height:100%;background:var(--graphite);border-radius:5px}
+.bar.weak .t span{background:var(--accent)}
+.bar .v{font:600 13px var(--f-mono);font-variant-numeric:tabular-nums;color:var(--muted)}
+:root[data-theme="dark"] .bar .t span{background:#8D8CB8}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bar .t span{background:#8D8CB8}}
+.bar.weak .t span{background:var(--accent)!important}
+.svcpick{padding:16px;border-radius:var(--r);background:var(--bg);border:1px solid var(--line);font-size:15px}
+.svcpick b{font-weight:700}
+.result .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+@media (max-width:860px){.xray .wrap{grid-template-columns:1fr;gap:28px}.panel{padding:22px;min-height:0}}
+
+/* cases */
+.cases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:40px}
+.case{display:grid;gap:10px;align-content:start;padding-top:18px;border-top:3px solid var(--ink)}
+.case .meta{font:600 12px/1.3 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.case p{color:var(--muted);font-size:16px}
+@media (max-width:900px){.cases{grid-template-columns:1fr}}
+
+/* quem sou */
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:48px}
+.about .body{display:grid;gap:18px;max-width:62ch}
+.about .body p{color:var(--muted)}
+.about .body p.big{font:700 26px/1.3 var(--f-display);font-stretch:88%;color:var(--ink)}
+.formacao{display:grid;gap:8px;padding:0;margin:8px 0 0;list-style:none;font-size:15px}
+.formacao li{padding-left:18px;position:relative}
+.formacao li::before{content:"";position:absolute;left:0;top:.65em;width:8px;height:2px;background:var(--accent)}
+@media (max-width:860px){.about{grid-template-columns:1fr;gap:20px}}
+
+/* chamada final */
+.final{background:var(--band);color:#F2F1FF;border-top:2px solid var(--accent-hi)}
+.final h2 em{color:#FF8A3D}
+.final .wrap{padding-block:clamp(56px,8vw,88px);display:grid;gap:18px;justify-items:start}
+.final h2{color:inherit;max-width:20ch}
+.final p{max-width:52ch;font-size:18px}
+.final .btn{background:#FF6600;color:#01004A}
+.final .btn::after{content:"→";font-weight:400}
+.final .phone{font:500 15px var(--f-mono);user-select:all}
+
+footer{padding-block:40px;font-size:14px;color:var(--muted)}
+footer .wrap{display:grid;gap:10px}
+footer .row{display:flex;flex-wrap:wrap;gap:6px 18px}
+footer b{color:var(--ink)}
+footer .made{margin-top:10px;font-style:italic}
+footer .made a{color:var(--accent);font-style:normal;font-weight:600}
+.variant-note{display:none}
+</style>
+</head>
+<body>
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Simbiose Digital, início"><svg class="logo" viewBox="0 0 749 286" role="img" aria-hidden="true"><path d="M15.9447 190.25C15.9447 192.703 16.8305 194.713 18.6021 196.281C20.4419 197.848 22.8268 199.142 25.7568 200.165C28.7549 201.187 32.1278 202.038 35.8755 202.72C39.6913 203.401 43.5753 204.117 47.5274 204.866C51.5476 205.616 55.4316 206.502 59.1793 207.524C62.9951 208.478 66.368 209.772 69.298 211.408C72.2962 213.043 74.681 215.087 76.4527 217.54C78.2924 219.925 79.2123 222.957 79.2123 226.637C79.2123 230.589 77.9858 233.826 75.5328 236.347C73.1479 238.8 70.1157 240.742 66.4361 242.173C62.8247 243.604 58.8726 244.558 54.5798 245.034C50.3552 245.58 46.4372 245.852 42.8258 245.852C35.603 245.852 28.6186 244.932 21.8728 243.093C15.1951 241.253 9.19885 238.868 3.88396 235.938V230.316C6.67768 232.292 9.74397 233.996 13.0828 235.427C16.4898 236.79 19.8627 237.914 23.2015 238.8C26.6085 239.617 29.8452 240.231 32.9114 240.639C35.9777 240.98 38.6352 241.151 40.8838 241.151C43.4049 241.151 46.0965 240.878 48.9583 240.333C51.8883 239.788 54.5798 238.97 57.0329 237.88C59.554 236.721 61.6323 235.291 63.2676 233.587C64.903 231.815 65.7207 229.703 65.7207 227.25C65.7207 225.342 64.8008 223.775 62.961 222.548C61.1894 221.254 58.8386 220.164 55.9086 219.278C52.9786 218.324 49.6397 217.506 45.892 216.825C42.1444 216.075 38.2945 215.326 34.3424 214.576C30.4584 213.758 26.6426 212.873 22.8949 211.919C19.1472 210.897 15.8084 209.636 12.8784 208.137C9.94839 206.57 7.5635 204.696 5.72373 202.515C3.9521 200.267 3.06628 197.575 3.06628 194.441C3.06628 190.829 4.22466 187.729 6.5414 185.14C8.85815 182.482 11.8904 180.336 15.638 178.701C19.3857 176.997 23.6785 175.805 28.5164 175.123C33.3544 174.442 38.2604 174.203 43.2346 174.408C46.7779 174.612 50.253 174.987 53.66 175.532C57.1351 176.077 60.4058 176.793 63.4721 177.678C66.6065 178.564 69.4343 179.62 71.9555 180.847C74.5448 182.005 76.7252 183.334 78.4969 184.833V190.148C76.5889 188.308 74.2381 186.707 71.4444 185.344C68.7188 183.913 65.7547 182.721 62.5522 181.767C59.4178 180.745 56.1471 179.961 52.7401 179.416C49.3331 178.803 45.9943 178.394 42.7235 178.19C39.1803 177.985 35.7733 178.155 32.5026 178.701C29.3 179.178 26.4722 179.961 24.0192 181.051C21.5662 182.073 19.5901 183.368 18.0911 184.935C16.6601 186.503 15.9447 188.274 15.9447 190.25ZM93.2829 188.513L86.4349 181.562L93.2829 174.612L100.233 181.562L93.2829 188.513ZM87.4569 206.706C87.4569 205.071 87.7636 203.537 88.3768 202.107C88.9901 200.676 89.8418 199.415 90.9321 198.325C92.0223 197.235 93.2829 196.383 94.7138 195.77C96.1447 195.156 97.6779 194.85 99.3132 194.85V244.626H87.4569V206.706ZM176.057 194.85C181.235 194.918 185.46 195.497 188.731 196.587C192.001 197.609 194.556 198.972 196.396 200.676C198.304 202.311 199.599 204.185 200.28 206.297C201.03 208.409 201.405 210.59 201.405 212.839L201.302 244.421H189.139V213.452C189.139 210.794 188.867 208.478 188.322 206.502C187.845 204.457 187.027 202.788 185.869 201.493C184.778 200.199 183.313 199.279 181.474 198.734C179.634 198.12 177.351 197.882 174.626 198.018C171.559 198.154 168.936 198.836 166.756 200.062C164.575 201.221 162.735 202.618 161.236 204.253L159.805 205.479C160.35 206.638 160.725 207.83 160.93 209.057C161.134 210.283 161.236 211.544 161.236 212.839L161.134 244.421H149.073V213.452C149.073 208.069 147.983 204.083 145.803 201.493C143.69 198.836 139.874 197.677 134.355 198.018C131.084 198.154 128.291 198.938 125.974 200.369C123.657 201.732 121.749 203.299 120.25 205.071V244.626H108.394V194.85H114.833C116.4 194.85 117.695 195.361 118.717 196.383C119.739 197.405 120.25 198.665 120.25 200.165C122.022 198.529 124.305 197.2 127.098 196.178C129.892 195.156 132.822 194.713 135.888 194.85C141.953 194.986 146.722 195.735 150.198 197.098C153.673 198.461 156.296 200.233 158.068 202.413L161.236 199.449C163.008 198.086 165.188 196.962 167.778 196.076C170.435 195.19 173.195 194.782 176.057 194.85ZM240.886 194.85C249.949 195.258 256.831 197.643 261.532 202.004C266.234 206.365 268.585 212.293 268.585 219.789C268.585 223.536 267.938 226.943 266.643 230.01C265.416 233.076 263.611 235.665 261.226 237.778C258.909 239.89 256.013 241.525 252.538 242.684C249.131 243.842 245.247 244.421 240.886 244.421C237.956 244.421 235.435 244.251 233.323 243.91C231.21 243.569 229.336 243.127 227.701 242.581C226.066 241.968 224.601 241.287 223.306 240.537C222.011 239.788 220.785 238.97 219.627 238.084C218.604 239.856 217.173 241.287 215.334 242.377C213.562 243.467 211.586 244.012 209.406 244.012V182.482C209.406 180.847 209.712 179.314 210.325 177.883C210.939 176.452 211.79 175.191 212.881 174.101C213.971 173.011 215.232 172.159 216.662 171.546C218.093 170.933 219.627 170.626 221.262 170.626V196.792C223.987 195.974 227.02 195.429 230.359 195.156C233.697 194.816 237.207 194.713 240.886 194.85ZM234.14 240.742C237.002 240.742 239.694 240.401 242.215 239.72C244.736 239.038 246.951 237.914 248.858 236.347C250.834 234.779 252.402 232.735 253.56 230.214C254.718 227.625 255.332 224.456 255.4 220.709C255.468 216.757 254.889 213.315 253.662 210.385C252.504 207.455 250.903 205.037 248.858 203.129C246.814 201.153 244.429 199.688 241.704 198.734C238.978 197.78 236.116 197.303 233.118 197.303C231.21 197.303 229.234 197.507 227.19 197.916C225.214 198.257 223.238 198.768 221.262 199.449V232.156C221.262 233.246 221.092 234.405 220.751 235.631C222.454 236.994 224.328 238.221 226.372 239.311C228.485 240.333 231.074 240.81 234.14 240.742ZM282.131 188.513L275.283 181.562L282.131 174.612L289.081 181.562L282.131 188.513ZM276.305 206.706C276.305 205.071 276.611 203.537 277.225 202.107C277.838 200.676 278.69 199.415 279.78 198.325C280.87 197.235 282.131 196.383 283.562 195.77C284.993 195.156 286.526 194.85 288.161 194.85V244.626H276.305V206.706ZM325.758 192.601C329.097 192.601 332.47 192.976 335.877 193.725C339.352 194.475 342.487 195.804 345.28 197.712C348.142 199.619 350.459 202.243 352.231 205.582C354.002 208.92 354.888 213.213 354.888 218.46C354.888 223.707 354.002 228.068 352.231 231.543C350.459 235.018 348.142 237.812 345.28 239.924C342.487 242.036 339.352 243.535 335.877 244.421C332.47 245.239 329.097 245.648 325.758 245.648C322.419 245.648 318.91 245.307 315.231 244.626C311.619 244.012 308.28 242.752 305.214 240.844C302.216 238.868 299.763 236.108 297.855 232.565C295.947 228.954 294.993 224.252 294.993 218.46C295.061 212.941 296.049 208.512 297.957 205.173C299.933 201.766 302.42 199.142 305.419 197.303C308.417 195.463 311.721 194.236 315.333 193.623C318.944 192.942 322.419 192.601 325.758 192.601ZM325.758 243.399C327.871 243.399 329.915 242.888 331.891 241.866C333.935 240.844 335.741 239.311 337.308 237.267C338.943 235.154 340.238 232.531 341.192 229.396C342.214 226.262 342.725 222.617 342.725 218.46C342.725 214.44 342.214 210.965 341.192 208.035C340.238 205.037 338.943 202.549 337.308 200.573C335.741 198.597 333.935 197.132 331.891 196.178C329.915 195.224 327.871 194.747 325.758 194.747C323.646 194.747 321.465 195.258 319.217 196.281C317.036 197.235 315.06 198.7 313.289 200.676C311.517 202.583 310.052 205.037 308.894 208.035C307.735 210.965 307.156 214.44 307.156 218.46C307.156 222.617 307.735 226.262 308.894 229.396C310.052 232.531 311.517 235.154 313.289 237.267C315.06 239.311 317.036 240.844 319.217 241.866C321.465 242.888 323.646 243.399 325.758 243.399ZM389.649 197.609C387.741 197.609 385.697 197.746 383.516 198.018C381.336 198.223 379.292 198.631 377.384 199.245C375.544 199.858 374.011 200.71 372.784 201.8C371.558 202.822 370.944 204.185 370.944 205.888C370.944 206.297 370.978 206.706 371.047 207.115C371.183 207.524 371.319 208.001 371.455 208.546C372.069 210.249 373.159 211.544 374.726 212.43C376.362 213.247 378.304 213.861 380.552 214.269C382.801 214.61 385.22 214.849 387.809 214.985C390.466 215.053 393.124 215.189 395.781 215.394C398.507 215.53 401.096 215.803 403.549 216.211C406.07 216.552 408.285 217.199 410.193 218.153C412.101 219.107 413.634 220.47 414.792 222.242C415.951 223.945 416.53 226.194 416.53 228.988C416.53 232.531 415.61 235.393 413.77 237.573C411.999 239.754 409.716 241.457 406.922 242.684C404.197 243.842 401.198 244.626 397.928 245.034C394.657 245.443 391.523 245.648 388.524 245.648C385.526 245.648 382.801 245.477 380.348 245.137C377.895 244.864 375.578 244.353 373.397 243.604C371.217 242.854 369.105 241.934 367.06 240.844C365.016 239.686 362.87 238.289 360.621 236.653V231.952C362.325 233.86 364.301 235.495 366.549 236.858C368.798 238.221 371.149 239.311 373.602 240.128C376.055 240.946 378.542 241.559 381.063 241.968C383.584 242.309 385.935 242.479 388.116 242.479C389.955 242.479 391.897 242.343 393.942 242.07C396.054 241.798 397.962 241.321 399.665 240.639C401.437 239.958 402.902 239.072 404.06 237.982C405.219 236.824 405.798 235.427 405.798 233.791C405.798 232.02 405.116 230.657 403.754 229.703C402.459 228.681 400.721 227.931 398.541 227.454C396.361 226.977 393.873 226.637 391.08 226.432C388.286 226.228 385.424 226.024 382.494 225.819C379.564 225.547 376.702 225.206 373.908 224.797C371.115 224.32 368.628 223.605 366.447 222.651C364.267 221.629 362.495 220.266 361.132 218.562C359.838 216.859 359.19 214.644 359.19 211.919C359.19 207.83 360.281 204.594 362.461 202.209C364.642 199.824 367.265 198.018 370.331 196.792C373.397 195.497 376.566 194.679 379.837 194.339C383.107 193.93 385.867 193.725 388.116 193.725C394.998 193.725 400.721 194.782 405.287 196.894C409.92 198.938 413.668 201.561 416.53 204.764V209.772C415.031 207.592 413.259 205.752 411.215 204.253C409.171 202.686 406.956 201.425 404.571 200.471C402.255 199.449 399.802 198.734 397.212 198.325C394.691 197.848 392.17 197.609 389.649 197.609ZM450.625 193.623C454.918 193.623 458.836 194.134 462.38 195.156C465.923 196.11 468.955 197.677 471.476 199.858C474.066 201.97 476.042 204.662 477.404 207.932C478.835 211.203 479.551 215.155 479.551 219.789H432.943C432.943 223.945 433.522 227.523 434.681 230.521C435.839 233.519 437.27 236.006 438.974 237.982C440.745 239.89 442.721 241.287 444.902 242.173C447.082 243.058 449.195 243.467 451.239 243.399C453.76 243.331 456.213 243.024 458.598 242.479C460.983 241.934 463.197 241.116 465.241 240.026C467.286 238.936 469.091 237.539 470.659 235.836C472.226 234.064 473.418 231.986 474.236 229.601H478.12C477.03 232.94 475.462 235.699 473.418 237.88C471.442 240.06 469.194 241.798 466.672 243.093C464.219 244.387 461.596 245.307 458.802 245.852C456.009 246.397 453.283 246.67 450.625 246.67C447.832 246.67 444.663 246.397 441.12 245.852C437.577 245.307 434.204 244.115 431.001 242.275C427.867 240.435 425.209 237.744 423.029 234.2C420.917 230.657 419.86 225.921 419.86 219.993C419.929 214.406 420.917 209.909 422.825 206.502C424.801 203.026 427.288 200.335 430.286 198.427C433.284 196.519 436.589 195.258 440.2 194.645C443.812 193.964 447.287 193.623 450.625 193.623ZM468.103 215.905C467.763 212.498 467.047 209.534 465.957 207.013C464.935 204.491 463.64 202.413 462.073 200.778C460.574 199.074 458.87 197.814 456.962 196.996C455.123 196.178 453.249 195.77 451.341 195.77C449.433 195.77 447.457 196.178 445.413 196.996C443.437 197.814 441.597 199.074 439.893 200.778C438.258 202.481 436.827 204.594 435.601 207.115C434.374 209.568 433.591 212.498 433.25 215.905H468.103Z" fill="var(--logo-a)"/> <path d="M489.677 177.618V240.885H520.442C524.803 240.885 528.892 240.068 532.707 238.432C536.591 236.729 539.964 234.446 542.826 231.584C545.688 228.722 547.937 225.383 549.572 221.568C551.207 217.752 552.025 213.663 552.025 209.302C552.025 204.942 551.207 200.853 549.572 197.037C547.937 193.153 545.688 189.78 542.826 186.919C539.964 184.057 536.591 181.808 532.707 180.173C528.892 178.469 524.803 177.618 520.442 177.618H489.677ZM485.589 240.885V173.529H520.442C525.348 173.529 529.982 174.483 534.343 176.391C538.704 178.231 542.485 180.786 545.688 184.057C548.959 187.259 551.514 191.041 553.354 195.402C555.262 199.763 556.216 204.396 556.216 209.302C556.216 214.209 555.262 218.842 553.354 223.203C551.514 227.564 548.959 231.38 545.688 234.65C542.485 237.853 538.704 240.408 534.343 242.316C529.982 244.156 525.348 245.076 520.442 245.076H485.589V240.885ZM564.442 192.234H568.53V245.076H564.442V192.234ZM564.442 173.529H568.53V182.932H564.442V173.529ZM602.987 280.849C599.307 280.849 595.832 280.134 592.561 278.703C589.359 277.34 586.565 275.432 584.18 272.979C581.863 270.526 580.024 267.664 578.661 264.393C577.366 261.191 576.753 257.75 576.821 254.07H580.909C580.773 257.137 581.25 260.032 582.34 262.758C583.499 265.552 585.066 267.971 587.042 270.015C589.086 272.127 591.471 273.763 594.197 274.921C596.922 276.147 599.852 276.761 602.987 276.761C606.053 276.761 608.915 276.182 611.572 275.023C614.23 273.865 616.547 272.264 618.523 270.219C620.499 268.243 622.066 265.927 623.224 263.269C624.383 260.612 624.962 257.75 624.962 254.683V233.015C622.645 236.695 619.545 239.625 615.661 241.805C611.845 243.986 607.62 245.076 602.987 245.076C599.307 245.076 595.866 244.394 592.664 243.032C589.529 241.669 586.769 239.795 584.385 237.41C582.068 235.025 580.228 232.266 578.865 229.131C577.503 225.929 576.821 222.488 576.821 218.808C576.821 215.197 577.503 211.824 578.865 208.689C580.228 205.487 582.068 202.693 584.385 200.308C586.769 197.923 589.529 196.049 592.664 194.687C595.866 193.324 599.307 192.642 602.987 192.642C607.62 192.642 611.845 193.733 615.661 195.913C619.545 198.094 622.645 201.024 624.962 204.703V192.234H629.152V254.683C629.152 258.295 628.471 261.668 627.108 264.802C625.745 268.005 623.872 270.799 621.487 273.183C619.102 275.568 616.308 277.442 613.105 278.805C609.971 280.168 606.598 280.849 602.987 280.849ZM624.962 219.421V218.195C624.894 215.265 624.246 212.505 623.02 209.916C621.861 207.326 620.294 205.078 618.318 203.17C616.342 201.194 614.025 199.661 611.368 198.571C608.779 197.412 605.985 196.833 602.987 196.833C599.92 196.833 597.025 197.412 594.299 198.571C591.641 199.729 589.291 201.33 587.246 203.374C585.27 205.35 583.703 207.667 582.545 210.325C581.455 212.982 580.909 215.81 580.909 218.808C580.909 221.874 581.455 224.77 582.545 227.496C583.703 230.153 585.27 232.504 587.246 234.548C589.291 236.524 591.641 238.091 594.299 239.25C597.025 240.408 599.92 240.987 602.987 240.987C605.985 240.987 608.779 240.442 611.368 239.352C614.025 238.194 616.342 236.661 618.318 234.753C620.294 232.777 621.861 230.494 623.02 227.905C624.246 225.247 624.894 222.419 624.962 219.421ZM637.306 192.234H641.394V245.076H637.306V192.234ZM637.306 173.529H641.394V182.932H637.306V173.529ZM675.442 192.234V196.424H653.774V218.195C653.706 221.329 654.217 224.293 655.307 227.087C656.465 229.813 658.032 232.231 660.008 234.344C661.984 236.388 664.335 238.023 667.061 239.25C669.786 240.408 672.716 240.987 675.851 240.987V245.076C672.171 245.076 668.73 244.394 665.528 243.032C662.325 241.601 659.531 239.693 657.147 237.308C654.83 234.923 652.99 232.095 651.627 228.825C650.264 225.554 649.617 222.011 649.685 218.195V173.529H653.774V192.234H675.442ZM726.967 192.234H731.26V245.076H726.967V233.015C724.582 236.695 721.482 239.625 717.666 241.805C713.918 243.986 709.727 245.076 705.094 245.076C701.483 245.076 698.076 244.394 694.873 243.032C691.67 241.669 688.877 239.795 686.492 237.41C684.175 235.025 682.335 232.266 680.973 229.131C679.61 225.929 678.928 222.488 678.928 218.808C678.928 215.197 679.61 211.824 680.973 208.689C682.335 205.487 684.175 202.693 686.492 200.308C688.877 197.923 691.67 196.049 694.873 194.687C698.076 193.324 701.483 192.642 705.094 192.642C709.727 192.642 713.918 193.733 717.666 195.913C721.482 198.094 724.582 201.024 726.967 204.703V192.234ZM726.967 219.421V218.195C726.899 215.265 726.251 212.505 725.025 209.916C723.866 207.326 722.299 205.078 720.323 203.17C718.347 201.194 716.03 199.661 713.373 198.571C710.784 197.412 708.024 196.833 705.094 196.833C702.028 196.833 699.166 197.412 696.508 198.571C693.851 199.729 691.5 201.33 689.456 203.374C687.48 205.35 685.913 207.667 684.754 210.325C683.596 212.982 683.017 215.81 683.017 218.808C683.017 221.874 683.596 224.77 684.754 227.496C685.913 230.153 687.48 232.504 689.456 234.548C691.5 236.524 693.851 238.091 696.508 239.25C699.166 240.408 702.028 240.987 705.094 240.987C708.024 240.987 710.784 240.442 713.373 239.352C716.03 238.194 718.347 236.661 720.323 234.753C722.299 232.777 723.866 230.494 725.025 227.905C726.251 225.247 726.899 222.419 726.967 219.421ZM739.416 173.529H743.606V245.076H739.416V173.529Z" fill="var(--logo-b)"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M340.839 25.356C343.32 25.356 345.649 24.643 347.622 23.4106V39.9244H318.04H317.907L317.775 39.9362C301.038 41.4239 289.232 55.8473 286.27 71.9233C283.38 87.6119 288.72 105.512 306.229 116.225C305.633 119.229 305.5 123.055 306.654 126.77C308.21 131.78 312.047 136.334 319.396 138.249L319.769 138.346H320.153H354.184V157.992C353.235 159.385 351.333 160.925 349.039 161.375C346.747 161.824 343.537 161.277 340.071 156.935C339.037 155.639 337.148 155.427 335.851 156.462C334.555 157.496 334.343 159.386 335.378 160.682C340.009 166.483 345.362 168.215 350.193 167.268C354.712 166.383 358.298 163.226 359.859 160.177L360.189 159.533V158.808V135.343V132.34H360.189V116.66V113.657H357.186H324.268C322.61 113.657 321.265 115.002 321.265 116.66C321.265 118.318 322.61 119.663 324.268 119.663H354.184V132.34H320.553C315.522 130.924 313.325 128 312.389 124.988C311.364 121.687 311.802 118.021 312.556 115.695L313.321 113.337L311.15 112.14C294.569 102.997 289.586 87.0674 292.176 73.0114C294.794 58.8009 304.95 47.1747 318.177 45.9297H350.625H353.628V42.9271V12.9002L353.628 12.869L353.627 12.8464L353.627 12.8294C353.628 12.779 353.628 12.7285 353.628 12.678C353.628 5.67614 347.841 0 340.839 0C333.837 0 328.161 5.67614 328.161 12.678C328.161 19.6799 333.837 25.356 340.839 25.356ZM378.317 51.6348C383.785 50.2108 387.881 45.2588 387.881 39.3687C387.881 32.3669 382.093 26.6907 375.092 26.6907C368.09 26.6907 362.414 32.3669 362.414 39.3687C362.414 45.4155 366.647 50.4736 372.311 51.7409V59.7516C355.259 61.1604 341.951 72.9074 341.951 87.1902C341.951 89.9748 342.456 92.663 343.397 95.197H318.415C312.556 93.0977 308.608 85.4035 309.841 77.8602C310.444 74.1737 312.288 70.7493 315.64 68.3215C318.571 66.1985 322.87 64.6857 328.939 64.6402V77.8481H323.935C322.276 77.8481 320.932 79.1925 320.932 80.8508C320.932 82.5091 322.276 83.8535 323.935 83.8535H331.942H334.944V80.8508V61.7226V58.8999L332.127 58.7256C323.528 58.1937 316.88 60.0082 312.117 63.4578C307.341 66.9173 304.743 71.8199 303.914 76.8913C302.312 86.6923 307.329 98.059 317.041 101.068L317.475 101.202H317.929H346.633C351.964 108.561 361.366 113.725 372.311 114.629V137.235C372.311 138.893 373.656 140.237 375.314 140.237C376.972 140.237 378.317 138.893 378.317 137.235V114.693C389.664 114 399.45 108.738 404.919 101.155C405.092 101.186 405.27 101.202 405.452 101.202H432.365H432.82L433.254 101.068C442.966 98.059 447.982 86.6923 446.38 76.8913C445.551 71.8199 442.954 66.9173 438.177 63.4578C433.414 60.0082 426.766 58.1937 418.167 58.7256L415.35 58.8999V61.7226V80.8508V83.8535H418.353H426.36C428.018 83.8535 429.363 82.5091 429.363 80.8508C429.363 79.1925 428.018 77.8481 426.36 77.8481H421.355V64.6402C427.425 64.6857 431.723 66.1985 434.654 68.3215C438.007 70.7493 439.851 74.1737 440.453 77.8602C441.687 85.4035 437.739 93.0977 431.879 95.197H408.12C409.061 92.663 409.567 89.9748 409.567 87.1902C409.567 72.6601 395.793 60.7543 378.317 59.6877V51.6348ZM372.311 65.7743C357.661 67.143 347.956 77.1295 347.956 87.1902C347.956 97.2508 357.661 107.237 372.311 108.606V65.7743ZM378.317 108.678V65.7023C393.462 66.7416 403.561 76.9273 403.561 87.1902C403.561 97.453 393.462 107.639 378.317 108.678ZM429.029 116.66C429.029 115.002 427.685 113.657 426.026 113.657H393.108H390.105V116.66V132.34H390.105V135.343V158.808V159.533L390.435 160.177C391.997 163.226 395.582 166.383 400.101 167.268C404.932 168.215 410.286 166.483 414.916 160.682C415.951 159.386 415.739 157.496 414.443 156.462C413.147 155.427 411.258 155.639 410.223 156.935C406.757 161.277 403.548 161.824 401.256 161.375C398.961 160.925 397.059 159.385 396.111 157.992V138.346H430.141H430.526L430.898 138.249C438.247 136.334 442.084 131.78 443.64 126.77C444.794 123.055 444.661 119.229 444.065 116.225C461.575 105.512 466.915 87.6119 464.024 71.9233C461.063 55.8473 449.257 41.4239 432.52 39.9362L432.387 39.9244H432.254H402.672V23.4106C404.645 24.643 406.974 25.356 409.456 25.356C416.458 25.356 422.134 19.6799 422.134 12.678C422.134 5.67614 416.458 0 409.456 0C402.454 0 396.667 5.67614 396.667 12.678C396.667 12.7285 396.667 12.7788 396.667 12.8292C396.667 12.8528 396.667 12.8765 396.667 12.9002V42.9271V45.9297H399.669H432.117C445.344 47.1747 455.5 58.8009 458.118 73.0114C460.708 87.0674 455.726 102.997 439.145 112.14L436.974 113.337L437.739 115.695C438.493 118.021 438.931 121.687 437.905 124.988C436.97 128 434.772 130.924 429.742 132.34H396.111V119.663H426.026C427.685 119.663 429.029 118.318 429.029 116.66Z" fill="var(--logo-icon)"/></svg><span>Reestruturação empresarial com IA</span></a>
+    <nav class="nav">
+      <a class="plain" href="https://simbiosedigital.alpaclass.com/conteudos" target="_blank" rel="noopener">Área do aluno</a>
+      <a class="btn btn-primary btn-sm wa" data-src="topo" href="#">Agendar diagnóstico</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <div class="hero-band">
+  <section class="hero wrap">
+    <div>
+    <p class="eyebrow tag">Para empresas onde o dinheiro não sobra no fim do mês</p>
+    <h1 id="hero-title">Sua empresa funciona. <em>O dinheiro é que não fica.</em></h1>
+    <p class="lede" id="hero-sub">Eu organizo a gestão administrativa da empresa inteira. Olho o negócio de cima, acho a causa real e resolvo por dentro, junto com a sua equipe.</p>
+    <div class="ctas">
+      <a class="btn btn-primary wa" data-src="abertura" href="#">Agendar diagnóstico gratuito</a>
+      <a class="btn btn-ghost" href="#raio-x">Fazer o Raio-X da empresa</a>
+    </div>
+    <p class="cta-note">Diagnóstico de 30 minutos pelo WhatsApp, sem compromisso.</p>
+    <div class="creds">
+      <span><strong>Evelise Soares</strong>, fundadora</span>
+      <span>Gestora hospitalar</span>
+      <span>Pós-graduação em IA para a Saúde</span>
+    </div>
+    </div>
+    <figure class="portrait" style="margin:0">
+      <div class="shot">
+      <span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
+      <div class="frame">
+        <svg class="mono" viewBox="0 0 180 168" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M55.3099 25.356C57.7916 25.356 60.1207 24.643 62.0936 23.4106V39.9244H32.5116H32.3784L32.2458 39.9362C15.5088 41.4239 3.70296 55.8473 0.74119 71.9233C-2.14919 87.6119 3.19106 105.512 20.7003 116.225C20.1045 119.229 19.9716 123.055 21.1253 126.77C22.6813 131.78 26.5187 136.334 33.8675 138.249L34.2398 138.346H34.6246H68.6551V157.992C67.7062 159.385 65.8045 160.925 63.5097 161.375C61.2179 161.824 58.0082 161.277 54.5426 156.935C53.508 155.639 51.6187 155.427 50.3226 156.462C49.0266 157.496 48.8146 159.386 49.8492 160.682C54.4798 166.483 59.8333 168.215 64.6645 167.268C69.1837 166.383 72.7689 163.226 74.3303 160.177L74.6604 159.533V158.808V135.343V132.34H74.6603V116.66V113.657H71.6576H38.7393C37.081 113.657 35.7366 115.002 35.7366 116.66C35.7366 118.318 37.081 119.663 38.7393 119.663H68.6549V132.34H35.0237C29.9935 130.924 27.7959 128 26.8605 124.988C25.835 121.687 26.2728 118.021 27.027 115.695L27.792 113.337L25.6207 112.14C9.04005 102.997 4.05756 87.0674 6.64717 73.0114C9.26523 58.8009 19.4216 47.1747 32.6486 45.9297H65.0963H68.099V42.9271V12.9002L68.0988 12.869L68.0985 12.8464L68.0982 12.8294C68.0988 12.779 68.0991 12.7285 68.0991 12.678C68.0991 5.67614 62.3117 0 55.3099 0C48.308 0 42.6319 5.67614 42.6319 12.678C42.6319 19.6799 48.308 25.356 55.3099 25.356ZM92.7879 51.6348C98.2566 50.2108 102.352 45.2588 102.352 39.3687C102.352 32.3669 96.5647 26.6907 89.5628 26.6907C82.5609 26.6907 76.8848 32.3669 76.8848 39.3687C76.8848 45.4155 81.118 50.4736 86.7826 51.7409V59.7516C69.7302 61.1604 56.4218 72.9074 56.4218 87.1902C56.4218 89.9748 56.9277 92.663 57.8685 95.197H32.8863C27.0267 93.0977 23.079 85.4035 24.3122 77.8602C24.9149 74.1737 26.7591 70.7493 30.1112 68.3215C33.0425 66.1985 37.3408 64.6857 43.4103 64.6402V77.8481H38.4058C36.7475 77.8481 35.4031 79.1925 35.4031 80.8508C35.4031 82.5091 36.7475 83.8535 38.4058 83.8535H46.413H49.4156V80.8508V61.7226V58.8999L46.5983 58.7256C37.9995 58.1937 31.3516 60.0082 26.5886 63.4578C21.812 66.9173 19.2147 71.8199 18.3855 76.8913C16.7832 86.6923 21.8 98.059 31.5118 101.068L31.9459 101.202H32.4004H61.1039C66.4351 108.561 75.8376 113.725 86.7826 114.629V137.235C86.7826 138.893 88.1269 140.237 89.7852 140.237C91.4436 140.237 92.7879 138.893 92.7879 137.235V114.693C104.135 114 113.921 108.738 119.39 101.155C119.563 101.186 119.741 101.202 119.923 101.202H146.836H147.291L147.725 101.068C157.437 98.059 162.454 86.6923 160.851 76.8913C160.022 71.8199 157.425 66.9173 152.648 63.4578C147.885 60.0082 141.237 58.1937 132.639 58.7256L129.821 58.8999V61.7226V80.8508V83.8535H132.824H140.831C142.489 83.8535 143.834 82.5091 143.834 80.8508C143.834 79.1925 142.489 77.8481 140.831 77.8481H135.827V64.6402C141.896 64.6857 146.194 66.1985 149.126 68.3215C152.478 70.7493 154.322 74.1737 154.925 77.8602C156.158 85.4035 152.21 93.0977 146.351 95.197H122.591C123.532 92.663 124.038 89.9748 124.038 87.1902C124.038 72.6601 110.265 60.7543 92.7879 59.6877V51.6348ZM86.7826 65.7743C72.1323 67.143 62.4272 77.1295 62.4272 87.1902C62.4272 97.2508 72.1323 107.237 86.7826 108.606V65.7743ZM92.7879 108.678V65.7023C107.933 66.7416 118.032 76.9273 118.032 87.1902C118.032 97.453 107.933 107.639 92.7879 108.678ZM143.5 116.66C143.5 115.002 142.156 113.657 140.498 113.657H107.579H104.577V116.66V132.34H104.576V135.343V158.808V159.533L104.907 160.177C106.468 163.226 110.053 166.383 114.572 167.268C119.404 168.215 124.757 166.483 129.388 160.682C130.422 159.386 130.21 157.496 128.914 156.462C127.618 155.427 125.729 155.639 124.694 156.935C121.229 161.277 118.019 161.824 115.727 161.375C113.432 160.925 111.531 159.385 110.582 157.992V138.346H144.612H144.997L145.369 138.249C152.718 136.334 156.555 131.78 158.112 126.77C159.265 123.055 159.132 119.229 158.537 116.225C176.046 105.512 181.386 87.6119 178.496 71.9233C175.534 55.8473 163.728 41.4239 146.991 39.9362L146.858 39.9244H146.725H117.143V23.4106C119.116 24.643 121.445 25.356 123.927 25.356C130.929 25.356 136.605 19.6799 136.605 12.678C136.605 5.67614 130.929 0 123.927 0C116.925 0 111.138 5.67614 111.138 12.678C111.138 12.7285 111.138 12.7788 111.139 12.8292C111.138 12.8528 111.138 12.8765 111.138 12.9002V42.9271V45.9297H114.141H146.588C159.815 47.1747 169.972 58.8009 172.59 73.0114C175.179 87.0674 170.197 102.997 153.616 112.14L151.445 113.337L152.21 115.695C152.964 118.021 153.402 121.687 152.376 124.988C151.441 128 149.243 130.924 144.213 132.34H110.582V119.663H140.498C142.156 119.663 143.5 118.318 143.5 116.66Z" fill="currentColor"/></svg>
+        <img src="foto-evelise.webp" alt="Evelise Soares, fundadora da Simbiose Digital" width="720" height="900" onerror="this.remove()">
+      </div>
+      </div>
+      <figcaption class="caption"><b>Evelise Soares</b>Fundadora · Consultora</figcaption>
+    </figure>
+  </section>
+  </div>
+
+  <section class="problem" aria-labelledby="p-title">
+    <div class="wrap">
+      <p class="eyebrow">Sintoma: não sobra dinheiro</p>
+      <h2 id="p-title">O sintoma é o mesmo. <em>A causa muda.</em></h2>
+      <p class="intro">"Não sobra dinheiro" tem origens diferentes. Tratar a causa errada sai caro. Em geral, é uma destas:</p>
+      <div class="causes">
+        <div class="cause"><span class="k">Causa · controle</span><h3>Entra dinheiro, mas você não sabe para onde ele vai.</h3><p>Caixa, contas e contabilidade não conversam.</p></div>
+        <div class="cause"><span class="k">Causa · margem</span><h3>A operação ficou cara e a margem sumiu.</h3><p>Compras sem controle, retrabalho, estrutura maior que o necessário.</p></div>
+        <div class="cause"><span class="k">Causa · venda</span><h3>Parece custo, mas é venda.</h3><p>A empresa não fatura o suficiente para pagar a própria estrutura. Cortar só piora.</p></div>
+        <div class="cause"><span class="k">Causa · estrutura</span><h3>A empresa cresceu e a estrutura ficou para trás.</h3><p>Tudo passa pelo dono e cada área funciona de um jeito.</p></div>
+      </div>
+      <p class="close">Qual é a sua? O Raio-X logo abaixo te dá a primeira pista.</p>
+    </div>
+  </section>
+
+  <section class="xray" id="raio-x" aria-labelledby="x-title">
+    <div class="wrap">
+      <div class="intro">
+        <p class="eyebrow">Ferramenta gratuita</p>
+        <h2 id="x-title">Raio-X da sua empresa</h2>
+        <p>8 perguntas, 2 minutos. No final você vê qual cenário parece ser o seu e por onde começar.</p>
+        <p>As respostas ficam só no seu navegador. Nada é enviado, a não ser que você mesmo decida mandar o resultado pelo WhatsApp.</p>
+        <svg class="xicon" viewBox="0 0 180 168" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M55.3099 25.356C57.7916 25.356 60.1207 24.643 62.0936 23.4106V39.9244H32.5116H32.3784L32.2458 39.9362C15.5088 41.4239 3.70296 55.8473 0.74119 71.9233C-2.14919 87.6119 3.19106 105.512 20.7003 116.225C20.1045 119.229 19.9716 123.055 21.1253 126.77C22.6813 131.78 26.5187 136.334 33.8675 138.249L34.2398 138.346H34.6246H68.6551V157.992C67.7062 159.385 65.8045 160.925 63.5097 161.375C61.2179 161.824 58.0082 161.277 54.5426 156.935C53.508 155.639 51.6187 155.427 50.3226 156.462C49.0266 157.496 48.8146 159.386 49.8492 160.682C54.4798 166.483 59.8333 168.215 64.6645 167.268C69.1837 166.383 72.7689 163.226 74.3303 160.177L74.6604 159.533V158.808V135.343V132.34H74.6603V116.66V113.657H71.6576H38.7393C37.081 113.657 35.7366 115.002 35.7366 116.66C35.7366 118.318 37.081 119.663 38.7393 119.663H68.6549V132.34H35.0237C29.9935 130.924 27.7959 128 26.8605 124.988C25.835 121.687 26.2728 118.021 27.027 115.695L27.792 113.337L25.6207 112.14C9.04005 102.997 4.05756 87.0674 6.64717 73.0114C9.26523 58.8009 19.4216 47.1747 32.6486 45.9297H65.0963H68.099V42.9271V12.9002L68.0988 12.869L68.0985 12.8464L68.0982 12.8294C68.0988 12.779 68.0991 12.7285 68.0991 12.678C68.0991 5.67614 62.3117 0 55.3099 0C48.308 0 42.6319 5.67614 42.6319 12.678C42.6319 19.6799 48.308 25.356 55.3099 25.356ZM92.7879 51.6348C98.2566 50.2108 102.352 45.2588 102.352 39.3687C102.352 32.3669 96.5647 26.6907 89.5628 26.6907C82.5609 26.6907 76.8848 32.3669 76.8848 39.3687C76.8848 45.4155 81.118 50.4736 86.7826 51.7409V59.7516C69.7302 61.1604 56.4218 72.9074 56.4218 87.1902C56.4218 89.9748 56.9277 92.663 57.8685 95.197H32.8863C27.0267 93.0977 23.079 85.4035 24.3122 77.8602C24.9149 74.1737 26.7591 70.7493 30.1112 68.3215C33.0425 66.1985 37.3408 64.6857 43.4103 64.6402V77.8481H38.4058C36.7475 77.8481 35.4031 79.1925 35.4031 80.8508C35.4031 82.5091 36.7475 83.8535 38.4058 83.8535H46.413H49.4156V80.8508V61.7226V58.8999L46.5983 58.7256C37.9995 58.1937 31.3516 60.0082 26.5886 63.4578C21.812 66.9173 19.2147 71.8199 18.3855 76.8913C16.7832 86.6923 21.8 98.059 31.5118 101.068L31.9459 101.202H32.4004H61.1039C66.4351 108.561 75.8376 113.725 86.7826 114.629V137.235C86.7826 138.893 88.1269 140.237 89.7852 140.237C91.4436 140.237 92.7879 138.893 92.7879 137.235V114.693C104.135 114 113.921 108.738 119.39 101.155C119.563 101.186 119.741 101.202 119.923 101.202H146.836H147.291L147.725 101.068C157.437 98.059 162.454 86.6923 160.851 76.8913C160.022 71.8199 157.425 66.9173 152.648 63.4578C147.885 60.0082 141.237 58.1937 132.639 58.7256L129.821 58.8999V61.7226V80.8508V83.8535H132.824H140.831C142.489 83.8535 143.834 82.5091 143.834 80.8508C143.834 79.1925 142.489 77.8481 140.831 77.8481H135.827V64.6402C141.896 64.6857 146.194 66.1985 149.126 68.3215C152.478 70.7493 154.322 74.1737 154.925 77.8602C156.158 85.4035 152.21 93.0977 146.351 95.197H122.591C123.532 92.663 124.038 89.9748 124.038 87.1902C124.038 72.6601 110.265 60.7543 92.7879 59.6877V51.6348ZM86.7826 65.7743C72.1323 67.143 62.4272 77.1295 62.4272 87.1902C62.4272 97.2508 72.1323 107.237 86.7826 108.606V65.7743ZM92.7879 108.678V65.7023C107.933 66.7416 118.032 76.9273 118.032 87.1902C118.032 97.453 107.933 107.639 92.7879 108.678ZM143.5 116.66C143.5 115.002 142.156 113.657 140.498 113.657H107.579H104.577V116.66V132.34H104.576V135.343V158.808V159.533L104.907 160.177C106.468 163.226 110.053 166.383 114.572 167.268C119.404 168.215 124.757 166.483 129.388 160.682C130.422 159.386 130.21 157.496 128.914 156.462C127.618 155.427 125.729 155.639 124.694 156.935C121.229 161.277 118.019 161.824 115.727 161.375C113.432 160.925 111.531 159.385 110.582 157.992V138.346H144.612H144.997L145.369 138.249C152.718 136.334 156.555 131.78 158.112 126.77C159.265 123.055 159.132 119.229 158.537 116.225C176.046 105.512 181.386 87.6119 178.496 71.9233C175.534 55.8473 163.728 41.4239 146.991 39.9362L146.858 39.9244H146.725H117.143V23.4106C119.116 24.643 121.445 25.356 123.927 25.356C130.929 25.356 136.605 19.6799 136.605 12.678C136.605 5.67614 130.929 0 123.927 0C116.925 0 111.138 5.67614 111.138 12.678C111.138 12.7285 111.138 12.7788 111.139 12.8292C111.138 12.8528 111.138 12.8765 111.138 12.9002V42.9271V45.9297H114.141H146.588C159.815 47.1747 169.972 58.8009 172.59 73.0114C175.179 87.0674 170.197 102.997 153.616 112.14L151.445 113.337L152.21 115.695C152.964 118.021 153.402 121.687 152.376 124.988C151.441 128 149.243 130.924 144.213 132.34H110.582V119.663H140.498C142.156 119.663 143.5 118.318 143.5 116.66Z" fill="currentColor"/></svg>
+      </div>
+      <div class="panel" id="panel" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="block wrap" aria-labelledby="w-title">
+    <div class="split">
+      <div class="head">
+        <p class="eyebrow">Como trabalho</p>
+        <h2 id="w-title">Enxergo o todo. <em>E ponho a mão na massa.</em></h2>
+      </div>
+      <div class="pillars">
+        <div class="pillar">
+          <h3>Você descobre onde o problema nasce</h3>
+          <p>Olho a empresa como um todo: dinheiro, operação, estrutura, rotina. Assim encontro onde o problema nasce, que quase nunca é onde ele aparece.</p>
+          <p>Essa leitura vai além do administrativo: mostro por que a venda trava e qual é o momento certo de investir em marketing. Quando é a contabilidade ou o RH que segura a gestão, conduzo a troca e os ajustes.</p>
+        </div>
+        <div class="pillar">
+          <h3>Você tem alguém operando junto</h3>
+          <p>Entro na rotina, opero junto com a sua equipe e fico até funcionar. Se um gestor sai de férias ou falta por um período, assumo o departamento: já fiz isso em vários setores, e a empresa segue rodando enquanto a casa é arrumada.</p>
+        </div>
+        <div class="pillar">
+          <h3>Sua empresa segue rodando enquanto a solução definitiva chega</h3>
+          <p>Sistema novo, nova contabilidade, integração: tudo isso leva meses. Enquanto isso, eu monto soluções provisórias com IA: painéis que mostram para onde o dinheiro está indo sem esperar o fechamento do mês, e planilhas que acabam com a digitação repetida. Elas resolvem o problema agora e saem de cena quando a definitiva chega.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block wrap" style="padding-top:clamp(16px,3vw,40px)" aria-labelledby="s-title">
+    <p class="eyebrow">Serviços</p>
+    <h2 id="s-title" style="margin-top:14px">Três formas de trabalhar juntos</h2>
+    <div class="services">
+      <article class="svc">
+        <h3>Diagnóstico e Reestruturação</h3>
+        <p>Entendo como a empresa funciona de verdade, defino o que precisa mudar e implanto junto com a equipe: rotinas, controles e ferramentas com IA.</p>
+        <p class="for"><b>Para quem:</b> empresas que cresceram no improviso e precisam de base para seguir.</p>
+      </article>
+      <article class="svc">
+        <h3>Gestão Assistida</h3>
+        <p>Você escolhe quem vai administrar a empresa. Eu trabalho ao lado dessa pessoa, como uma sombra, até ela conduzir sozinha.</p>
+        <p class="for"><b>Para quem:</b> donos que querem sair do operacional sem perder o controle.</p>
+      </article>
+      <article class="svc">
+        <h3>Mentoria para o Empresário</h3>
+        <p>Clareza de objetivos, organização financeira e equilíbrio entre a vida e a empresa. O negócio reflete quem está por trás dele.</p>
+        <p class="for"><b>Para quem:</b> donos que percebem que a solução passa também por eles.</p>
+      </article>
+    </div>
+    <div class="center-cta"><a class="btn btn-ghost" href="#raio-x">Qual serve para mim? Fazer o Raio-X</a></div>
+  </section>
+
+
+
+  <section class="block wrap" aria-labelledby="c-title">
+    <p class="eyebrow">Cases</p>
+    <h2 id="c-title" style="margin-top:14px">Onde já pus a mão</h2>
+    <div class="cases">
+      <article class="case">
+        <span class="meta">Hospital oftalmológico · interior de SP · 3 anos</span>
+        <h3>Gestão interina e reestruturação completa</h3>
+        <p class="outcome">O resultado para a direção: tranquilidade.</p>
+        <p>Por 3 anos conduzi a reestruturação completa: estrutura física, documentação e exigências regulatórias. Organizei a equipe de consultores (jurídico e contabilidade) para acelerar o projeto, acompanhei a implantação do sistema financeiro, implantei o sistema de armazenamento de imagens e otimizei processos como o faturamento de convênios. Enquanto a unificação dos sistemas andava, um painel de compras e estoque feito com IA passou a guiar as compras.</p>
+      </article>
+      <article class="case">
+        <span class="meta">Clínica materno-infantil · Jundiaí</span>
+        <h3>De negócio pessoal a gestão profissional</h3>
+        <p class="outcome">O resultado para os donos: tranquilidade.</p>
+        <p>Uma clínica que crescia, mas funcionava como negócio pessoal. Implantei caixa diário e conciliação, manual de rotinas, sistemas de gestão e pacotes de serviço, e ela passou a ter gestão profissional.</p>
+      </article>
+      <article class="case">
+        <span class="meta">Simbiose Digital · desde 2017</span>
+        <h3>Onde tudo começou</h3>
+        <p>Evento e plataforma para empreendedores, criados por mim: edições em 2017 e 2018, presencial em Jundiaí, versão online em 2019 e hoje um portal com mais de 2 mil alunos.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="people" aria-labelledby="pp-title">
+    <div class="wrap">
+      <h2 id="pp-title" style="font-size:clamp(26px,3.4vw,36px)">Reestruturar mexe com todo mundo.</h2>
+      <p>E é natural que incomode. Por isso, em projetos maiores, defino junto com a empresa um interlocutor para a equipe: alguém de dentro, que as pessoas já conhecem, ou um profissional externo que ajudo a contratar. Enquanto ele acolhe e comunica, eu conduzo a gestão. A mudança acontece com firmeza e sem atropelar ninguém.</p>
+    </div>
+  </section>
+  <section class="block wrap" aria-labelledby="a-title">
+    <div class="about">
+      <div>
+        <p class="eyebrow">Quem sou</p>
+        <h2 id="a-title" style="margin-top:14px">Evelise Soares</h2>
+      </div>
+      <div class="body">
+        <p>Comecei ajudando empreendedores a organizar a vida e o negócio. Assim nasceu a Simbiose Digital, que hoje tem mais de 2 mil alunos na plataforma. Depois fui para dentro das empresas. Hoje faço a gestão operacional de um hospital oftalmológico.</p>
+        <p class="big">Só se organiza de verdade o que se conhece operando. Por isso trabalho por dentro.</p>
+        <ul class="formacao">
+          <li>Pós-graduação em Inteligência Artificial para a Saúde</li>
+        </ul>
+        <p><a class="li-link" href="https://www.linkedin.com/in/evelise-soares-24294b162/" target="_blank" rel="noopener">Ver trajetória completa no LinkedIn</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" aria-labelledby="f-title">
+    <div class="wrap">
+      <h2 id="f-title">Vamos olhar a sua empresa <em>juntos?</em></h2>
+      <p>Em 30 minutos você sai com clareza sobre a causa do problema e o primeiro passo para resolver. Sem compromisso.</p>
+      <a class="btn wa" data-src="final" href="#">Agendar diagnóstico gratuito</a>
+      <span class="phone">WhatsApp (11) 97399-5936</span>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fbrand"><svg class="ficon" viewBox="0 0 180 168" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M55.3099 25.356C57.7916 25.356 60.1207 24.643 62.0936 23.4106V39.9244H32.5116H32.3784L32.2458 39.9362C15.5088 41.4239 3.70296 55.8473 0.74119 71.9233C-2.14919 87.6119 3.19106 105.512 20.7003 116.225C20.1045 119.229 19.9716 123.055 21.1253 126.77C22.6813 131.78 26.5187 136.334 33.8675 138.249L34.2398 138.346H34.6246H68.6551V157.992C67.7062 159.385 65.8045 160.925 63.5097 161.375C61.2179 161.824 58.0082 161.277 54.5426 156.935C53.508 155.639 51.6187 155.427 50.3226 156.462C49.0266 157.496 48.8146 159.386 49.8492 160.682C54.4798 166.483 59.8333 168.215 64.6645 167.268C69.1837 166.383 72.7689 163.226 74.3303 160.177L74.6604 159.533V158.808V135.343V132.34H74.6603V116.66V113.657H71.6576H38.7393C37.081 113.657 35.7366 115.002 35.7366 116.66C35.7366 118.318 37.081 119.663 38.7393 119.663H68.6549V132.34H35.0237C29.9935 130.924 27.7959 128 26.8605 124.988C25.835 121.687 26.2728 118.021 27.027 115.695L27.792 113.337L25.6207 112.14C9.04005 102.997 4.05756 87.0674 6.64717 73.0114C9.26523 58.8009 19.4216 47.1747 32.6486 45.9297H65.0963H68.099V42.9271V12.9002L68.0988 12.869L68.0985 12.8464L68.0982 12.8294C68.0988 12.779 68.0991 12.7285 68.0991 12.678C68.0991 5.67614 62.3117 0 55.3099 0C48.308 0 42.6319 5.67614 42.6319 12.678C42.6319 19.6799 48.308 25.356 55.3099 25.356ZM92.7879 51.6348C98.2566 50.2108 102.352 45.2588 102.352 39.3687C102.352 32.3669 96.5647 26.6907 89.5628 26.6907C82.5609 26.6907 76.8848 32.3669 76.8848 39.3687C76.8848 45.4155 81.118 50.4736 86.7826 51.7409V59.7516C69.7302 61.1604 56.4218 72.9074 56.4218 87.1902C56.4218 89.9748 56.9277 92.663 57.8685 95.197H32.8863C27.0267 93.0977 23.079 85.4035 24.3122 77.8602C24.9149 74.1737 26.7591 70.7493 30.1112 68.3215C33.0425 66.1985 37.3408 64.6857 43.4103 64.6402V77.8481H38.4058C36.7475 77.8481 35.4031 79.1925 35.4031 80.8508C35.4031 82.5091 36.7475 83.8535 38.4058 83.8535H46.413H49.4156V80.8508V61.7226V58.8999L46.5983 58.7256C37.9995 58.1937 31.3516 60.0082 26.5886 63.4578C21.812 66.9173 19.2147 71.8199 18.3855 76.8913C16.7832 86.6923 21.8 98.059 31.5118 101.068L31.9459 101.202H32.4004H61.1039C66.4351 108.561 75.8376 113.725 86.7826 114.629V137.235C86.7826 138.893 88.1269 140.237 89.7852 140.237C91.4436 140.237 92.7879 138.893 92.7879 137.235V114.693C104.135 114 113.921 108.738 119.39 101.155C119.563 101.186 119.741 101.202 119.923 101.202H146.836H147.291L147.725 101.068C157.437 98.059 162.454 86.6923 160.851 76.8913C160.022 71.8199 157.425 66.9173 152.648 63.4578C147.885 60.0082 141.237 58.1937 132.639 58.7256L129.821 58.8999V61.7226V80.8508V83.8535H132.824H140.831C142.489 83.8535 143.834 82.5091 143.834 80.8508C143.834 79.1925 142.489 77.8481 140.831 77.8481H135.827V64.6402C141.896 64.6857 146.194 66.1985 149.126 68.3215C152.478 70.7493 154.322 74.1737 154.925 77.8602C156.158 85.4035 152.21 93.0977 146.351 95.197H122.591C123.532 92.663 124.038 89.9748 124.038 87.1902C124.038 72.6601 110.265 60.7543 92.7879 59.6877V51.6348ZM86.7826 65.7743C72.1323 67.143 62.4272 77.1295 62.4272 87.1902C62.4272 97.2508 72.1323 107.237 86.7826 108.606V65.7743ZM92.7879 108.678V65.7023C107.933 66.7416 118.032 76.9273 118.032 87.1902C118.032 97.453 107.933 107.639 92.7879 108.678ZM143.5 116.66C143.5 115.002 142.156 113.657 140.498 113.657H107.579H104.577V116.66V132.34H104.576V135.343V158.808V159.533L104.907 160.177C106.468 163.226 110.053 166.383 114.572 167.268C119.404 168.215 124.757 166.483 129.388 160.682C130.422 159.386 130.21 157.496 128.914 156.462C127.618 155.427 125.729 155.639 124.694 156.935C121.229 161.277 118.019 161.824 115.727 161.375C113.432 160.925 111.531 159.385 110.582 157.992V138.346H144.612H144.997L145.369 138.249C152.718 136.334 156.555 131.78 158.112 126.77C159.265 123.055 159.132 119.229 158.537 116.225C176.046 105.512 181.386 87.6119 178.496 71.9233C175.534 55.8473 163.728 41.4239 146.991 39.9362L146.858 39.9244H146.725H117.143V23.4106C119.116 24.643 121.445 25.356 123.927 25.356C130.929 25.356 136.605 19.6799 136.605 12.678C136.605 5.67614 130.929 0 123.927 0C116.925 0 111.138 5.67614 111.138 12.678C111.138 12.7285 111.138 12.7788 111.139 12.8292C111.138 12.8528 111.138 12.8765 111.138 12.9002V42.9271V45.9297H114.141H146.588C159.815 47.1747 169.972 58.8009 172.59 73.0114C175.179 87.0674 170.197 102.997 153.616 112.14L151.445 113.337L152.21 115.695C152.964 118.021 153.402 121.687 152.376 124.988C151.441 128 149.243 130.924 144.213 132.34H110.582V119.663H140.498C142.156 119.663 143.5 118.318 143.5 116.66Z" fill="currentColor"/></svg><span><b>Simbiose Digital</b> · Reestruturação Empresarial com IA</span></div>
+    <div class="row">
+      <span>Campinas e Jundiaí (SP) · atendimento em todo o Brasil</span>
+      <a href="https://www.linkedin.com/in/evelise-soares-24294b162/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/evelisesoaresoficial" target="_blank" rel="noopener">Instagram @evelisesoaresoficial</a>
+      <span>WhatsApp (11) 97399-5936</span>
+      <a href="https://simbiosedigital.alpaclass.com/conteudos" target="_blank" rel="noopener">Área do aluno</a>
+    </div>
+    <p class="made">Este site foi construído com inteligência artificial e custa quase zero para manter. <a class="wa" data-src="rodape" data-msg="Olá, Evelise! Quero saber como o seu site foi feito com IA." href="#">Pergunte como</a></p>
+    <p class="variant-note" id="vnote"></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var PHONE = "5511973995936";
+
+  /* ---------- Teste A/B/C de títulos ---------- */
+  var VARIANTS = {
+    t1:{title:'Sua empresa funciona. <em>O dinheiro é que não fica.</em>',
+        sub:'Eu organizo a gestão administrativa da empresa inteira. Olho o negócio de cima, acho a causa real e resolvo por dentro, junto com a sua equipe.'},
+    t2:{title:'Entro na rotina <em>e organizo junto.</em>',
+        sub:'Gestão administrativa para empresas que já rodam, mas não fecham a conta. Visão do negócio inteiro e mão na massa do primeiro ao último dia.'},
+    t3:{title:'Antes de cortar custos, <em>descubra a causa.</em>',
+        sub:'Eu enxergo a empresa inteira, encontro a causa e organizo a gestão por dentro. Se for preciso, assumo a operação até ela andar sozinha.'}
+  };
+  function store(k,v){try{ if(v===undefined) return localStorage.getItem(k); localStorage.setItem(k,v);}catch(e){return null}}
+  var forced = (location.hash||"").replace("#","");
+  var variant = VARIANTS[forced] ? forced : (store("sd_variant")||"");
+  if(!VARIANTS[variant]){ variant = ["t1","t2","t3"][Math.floor(Math.random()*3)]; }
+  store("sd_variant", variant);
+  document.getElementById("hero-title").innerHTML = VARIANTS[variant].title;
+  document.getElementById("hero-sub").textContent = VARIANTS[variant].sub;
+  document.documentElement.setAttribute("data-variant", variant);
+  document.getElementById("vnote").textContent = "Versão " + variant.toUpperCase().replace("T","T");
+
+  /* evento de medição: no ar (Netlify) envia para a ferramenta de estatística; aqui só registra no console */
+  function track(name){
+    try{ if(window.goatcounter && window.goatcounter.count){ window.goatcounter.count({path:"evt-"+name+"-"+variant, title:name, event:true}); } }catch(e){}
+  }
+  track("view");
+
+  /* ---------- Links de WhatsApp ---------- */
+  var tag = "[" + variant.toUpperCase() + "]";
+  function waURL(msg){ return "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(msg); }
+  function defaultMsg(){ return "Olá, Evelise! Vi o site da Simbiose Digital e quero agendar o diagnóstico gratuito. " + tag; }
+  document.querySelectorAll("a.wa").forEach(function(a){
+    var m = a.getAttribute("data-msg");
+    a.href = waURL((m ? m + " " + tag : defaultMsg()));
+    a.target = "_blank"; a.rel = "noopener";
+    a.addEventListener("click", function(){ track("whatsapp-" + (a.getAttribute("data-src")||"")); });
+  });
+
+  /* ---------- Raio-X ---------- */
+  var Q = [
+    {q:"Você sabe quanto a empresa lucrou no mês passado?", o:["Não faço ideia","Tenho uma noção, mas é chute","Sei, mas demoro para levantar","Sei, com números na mão"]},
+    {q:"Você sabe quanto precisa faturar por mês para cobrir todos os custos?", o:["Nunca calculei","Tenho um número aproximado","Calculei uma vez, não acompanho","Sei e acompanho todo mês"]},
+    {q:"Os custos da operação estão sob controle?", o:["Não sei quanto custa operar","Sei o total, mas não onde está o peso","Sei onde está o peso, mas não consigo reduzir","Acompanho e ajusto sempre"]},
+    {q:"Se você tirar 15 dias de férias, o que acontece?", o:["A empresa para","Funciona, mas me ligam o dia todo","Funciona, com alguns problemas","Funciona normalmente"]},
+    {q:"As rotinas da empresa estão escritas de um jeito que outra pessoa consiga seguir?", o:["Não, está tudo na cabeça das pessoas","Algumas coisas soltas","As principais, mas desatualizadas","Sim, e são usadas no dia a dia"]},
+    {q:"Quando você precisa decidir, a informação está à mão?", o:["Decido no feeling","Peço para alguém levantar e espero dias","Tenho relatórios, mas não confio muito","Tenho números confiáveis num lugar só"]},
+    {q:"Quanto da rotina ainda é retrabalho manual?", o:["Muito, e ninguém usa tecnologia para ajudar","Bastante, com algumas planilhas","Pouco, temos sistema, mas IA não entrou ainda","Quase nada, e já usamos IA de forma organizada"]},
+    {q:"As vendas cobrem a estrutura que a empresa tem hoje?", o:["Não sei responder","Não, falta faturamento todo mês","Em alguns meses sim, em outros não","Sim, com folga"]}
+  ];
+  /* ordem de desempate: dinheiro, venda, operação, estrutura */
+  var SCEN = [
+    {id:"dinheiro", name:"O dinheiro não tem dono", q:[0,5], text:"Entra dinheiro, mas falta controle e informação para saber para onde ele vai."},
+    {id:"venda", name:"Parece custo, mas é venda", q:[1,7], text:"A empresa pode não estar faturando o bastante para o ponto de equilíbrio. Antes de cortar, vale entender a venda."},
+    {id:"operacao", name:"A operação ficou cara", q:[2,6], text:"O custo e o retrabalho estão comendo a margem."},
+    {id:"estrutura", name:"A estrutura ficou para trás", q:[3,4], text:"A empresa depende demais de você e de poucas pessoas."}
+  ];
+  var LABEL = {dinheiro:"Controle do dinheiro", venda:"Venda x ponto de equilíbrio", operacao:"Custo da operação", estrutura:"Estrutura e autonomia"};
+
+  var answers = new Array(Q.length).fill(null);
+  var step = 0;
+  var panel = document.getElementById("panel");
+  var started = false;
+
+  function el(tag, cls, html){ var e=document.createElement(tag); if(cls) e.className=cls; if(html!=null) e.innerHTML=html; return e; }
+
+  function renderQ(){
+    panel.innerHTML = "";
+    var prog = el("div","progress"); prog.setAttribute("aria-hidden","true");
+    for(var i=0;i<Q.length;i++){ var b=el("i", i<=step?"on":""); prog.appendChild(b); }
+    panel.appendChild(prog);
+    panel.appendChild(el("p","qnum","Pergunta " + (step+1) + " de " + Q.length));
+    var qt = el("p","qtext"); qt.textContent = Q[step].q; qt.id="qtext"; panel.appendChild(qt);
+    var opts = el("div","opts"); opts.setAttribute("role","group"); opts.setAttribute("aria-labelledby","qtext");
+    Q[step].o.forEach(function(txt, v){
+      var b = el("button","opt"); b.type="button"; b.id="q"+step+"o"+v; b.textContent = txt;
+      b.setAttribute("aria-pressed", answers[step]===v ? "true":"false");
+      b.addEventListener("click", function(){
+        if(!started){ started=true; track("raiox-inicio"); }
+        answers[step]=v;
+        if(step < Q.length-1){ step++; renderQ(); } else { track("raiox-resultado"); renderResult(); }
+      });
+      opts.appendChild(b);
+    });
+    panel.appendChild(opts);
+    var nav = el("div","qnav");
+    var back = el("button","linkbtn","Voltar"); back.type="button"; back.disabled = step===0;
+    back.addEventListener("click", function(){ if(step>0){ step--; renderQ(); } });
+    nav.appendChild(back);
+    panel.appendChild(nav);
+  }
+
+  function compute(){
+    var total = answers.reduce(function(s,v){return s+v},0);
+    var sums = SCEN.map(function(s){ return {s:s, v:answers[s.q[0]]+answers[s.q[1]]}; });
+    var min = Math.min.apply(null, sums.map(function(x){return x.v}));
+    var scen = sums.filter(function(x){return x.v===min})[0].s; /* desempate pela ordem de SCEN */
+    var weakPairs = sums.filter(function(x){return x.v<=2}).length;
+    var svc;
+    if(total<=10 || weakPairs>=2) svc="Diagnóstico e Reestruturação";
+    else if(scen.id==="estrutura") svc="Gestão Assistida";
+    else if(scen.id==="dinheiro") svc="Mentoria para o Empresário, como primeiro passo";
+    else svc="Diagnóstico e Reestruturação";
+    return {total:total, sums:sums, scen:scen, svc:svc};
+  }
+
+  function renderResult(){
+    var r = compute();
+    panel.innerHTML = "";
+    var box = el("div","result"); box.style.display="grid"; box.style.gap="18px";
+    box.appendChild(el("p","hyp","Hipótese do seu Raio-X"));
+    var h = el("h3"); h.textContent = r.scen.name; box.appendChild(h);
+    var p = el("p"); p.textContent = r.scen.text + " Em 30 minutos de conversa a gente confirma e define o primeiro passo."; p.style.color="var(--muted)"; box.appendChild(p);
+    var leg = el("p","qnum","Maturidade por área · quanto maior, melhor"); box.appendChild(leg);
+    var bars = el("div","bars");
+    r.sums.forEach(function(x){
+      var pct = Math.round(x.v/6*100);
+      var row = el("div","bar" + (x.s.id===r.scen.id ? " weak":""));
+      var name = el("span"); name.textContent = LABEL[x.s.id];
+      var val = el("span","v", pct + "%");
+      var t = el("div","t"); var f = el("span"); f.style.width = Math.max(pct,3) + "%"; t.appendChild(f);
+      row.appendChild(name); row.appendChild(val); row.appendChild(t);
+      bars.appendChild(row);
+    });
+    box.appendChild(bars);
+    var sp = el("p","svcpick"); sp.innerHTML = "O serviço que costuma fazer mais sentido aqui: <b></b>"; sp.querySelector("b").textContent = r.svc; box.appendChild(sp);
+    var actions = el("div","actions");
+    var msg = "Olá, Evelise! Fiz o Raio-X da empresa no site. Resultado: \"" + r.scen.name + "\" (maturidade geral " + Math.round(r.total/24*100) + "%). Serviço indicado: " + r.svc + ". Quero conversar sobre o meu resultado. " + tag;
+    var a = el("a","btn btn-primary","Quero conversar sobre o meu resultado"); a.href = waURL(msg); a.target="_blank"; a.rel="noopener";
+    a.addEventListener("click", function(){ track("whatsapp-raiox"); });
+    var again = el("button","linkbtn","Refazer o Raio-X"); again.type="button";
+    again.addEventListener("click", function(){ answers = new Array(Q.length).fill(null); step=0; renderQ(); });
+    var back = el("button","linkbtn","Voltar à última pergunta"); back.type="button";
+    back.addEventListener("click", function(){ step=Q.length-1; renderQ(); });
+    actions.appendChild(a); actions.appendChild(back); actions.appendChild(again);
+    box.appendChild(actions);
+    panel.appendChild(box);
+  }
+
+  renderQ();
+})();
+</script>
+
+</body>
+</html>
